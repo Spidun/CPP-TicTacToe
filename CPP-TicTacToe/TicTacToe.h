@@ -25,7 +25,7 @@ public:
 		while (true)
 		{
 			int position = 0;
-			std::cout << "Player " << (m_currentPlayer + 1) << " (" << GetMarkForCurrentPlayer()
+			std::cout << "Player " << (m_currentPlayer + 1) << " (" << CurPlayMark()
 				<< "), enter position (1-9): ";
 
 			if (!(std::cin >> position))
@@ -49,7 +49,7 @@ public:
 				continue;
 			}
 
-			m_board[index] = GetMarkForCurrentPlayer();
+			m_board[index] = CurPlayMark();
 			break;
 		}
 
@@ -83,7 +83,7 @@ public:
 		}
 		else
 		{
-			std::cout << "Player " << (m_currentPlayer + 1) << "'s turn (" << GetMarkForCurrentPlayer() << ")\n\n";
+			std::cout << "Player " << (m_currentPlayer + 1) << "'s turn (" << CurPlayMark() << ")\n\n";
 		}
 	}
 
@@ -124,7 +124,7 @@ private:
 		return true;
 	}
 
-	char GetMarkForCurrentPlayer() const
+	char CurPlayMark() const
 	{
 		return (m_currentPlayer == 0) ? 'X' : 'O';
 	}
